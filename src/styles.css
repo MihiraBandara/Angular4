@@ -1,0 +1,223 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+.main-container{
+    margin:0;}
+
+/*Main top  bar*/
+.top-bar {
+    height: 58px !important;
+	border: 1px solid #979797;
+    background: radial-gradient(circle, #0E198C 0%, #091649 100%);
+}
+.pro-main-title {
+	color: #FFFFFF;
+	font-family: Roboto;
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 28px;
+    width: 100%;
+    text-align: -webkit-center;
+    text-align: center;
+}
+
+/*Project index tab styles*/
+.mat-tab-label{
+    height: 40px !important;
+    min-width: auto !important;
+}
+.pro-card-title{
+	height: auto;
+    color: #939393;
+    font-size: 24px !important;
+    font-weight: 300;
+    line-height: 28px;
+    width: 130px;
+
+}
+.date-received {
+	height: auto;
+	width: auto;
+	color: #4A4A4A;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 16px;
+}
+md-toolbar{
+    background-color: indigo !important;
+}
+
+md-toolbar h2 {
+  color: white;
+   }
+
+.tissue-type-drop .mat-select-trigger {
+    min-width: 411px;
+    margin-bottom: 20px;
+}
+
+.project-information-dropDown .mat-select-trigger{  
+    width:760px;
+}
+.dropdown-container{
+    display: block;
+    padding-left: 30px;
+    padding-top: 14px;
+    position: relative;
+    flex: auto;
+}
+.open-left-card {
+    width:320px;
+    height:90px;
+     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+.header-border{
+  	/*border: 0.5px solid #C1C1C1;*/
+    border: none;
+    height: 1px;
+    /* Set the hr color */
+    color: #C1C1C1; /* old IE */
+    background-color: #eee;  /*Modern Browsers */
+}
+
+/*.raise-project-card{
+  padding: 0px 0px 10px 0px !important;
+}*/
+
+.card-header{
+    padding: 15px 0px 15px;
+}
+
+.dropdown-container-additional{
+    display: block;
+    position: relative;
+    -webkit-box-flex: 1;
+    -ms-flex: auto;
+    flex: auto;
+    padding: .4375em 0 0;
+    border-top: .84375em solid transparent;
+}
+
+.title-color{
+    color:#4c4949;
+}
+
+/* Raise Project **/
+
+.form-card{
+    width: 90%;
+    margin-top: 35px;
+    padding: 0px 15px 10px 0px !important;
+    margin-bottom: 22px;
+    margin-left: 25px;
+}
+
+.example-form {
+  width: 500px;
+}
+
+.example-full-width {
+  padding-left:30px;
+  width: 760px;
+}
+.additional-tissue-types-button{
+    width: 420px;
+    margin-top: -25px;
+    height: 145px;
+    background: url('/assets/images/tissues.png')  no-repeat scroll 0 0 transparent;
+}
+.main-card-header .dropDown-title{
+    font-size:24px !important;
+}
+.card-subtitle {
+	height: auto;
+    margin-top: 25px !important;
+    margin-left: 30px;
+	color: #8F8F8F;
+	font-size: 20px;
+	line-height: 24px;
+}
+.main-card-content{
+    padding-left:20px !important;
+}
+.card-title{
+    color:#5C5C5C;
+    font-size: 25px !important;
+}
+
+.dropDown-subTitle {
+	height: auto;
+	width: 100%;
+	color: #1F85BF;
+	font-size: 12px;
+	line-height: 14px;
+}
+
+.tissue-type-card{
+    padding-left: 15px;
+    width:423px;
+    height:102px;
+    padding-bottom:10px !important;
+    padding-left:10px !important;
+    padding-top:20px !important;
+    padding-right: 20px !important;
+}
+  .divider{
+      width: 10%;
+      border-right: 
+      1px solid black;
+  }
+  
+  md-input-container label {
+  color: #1F85BF !important;
+  font-size:11pt !important;
+}
+
+.mat-select-trigger {
+  color: #1F85BF !important;
+  font-size:11pt !important;
+}
+
+.tissue-type-stain-label .mat-select-trigger {
+  padding-bottom:10px;
+}
+.mat-select-placeholder{
+    padding:0 !important;
+}
+md-input-container.md-input-focused label {
+  font-size:10pt !important;
+}
+
+.mat-select:focus:not(.mat-select-disabled).mat-primary .mat-select-trigger {
+  font-size:10pt !important;
+}
+
+.tissue-priority-box  {
+    width: 90px !important;
+}
+.approve-button{
+    background-color:#0E198C;
+    color:white !important;
+  }
+  .reject-button{
+    background-color: white;
+    color: black !important;
+    border: 1px solid #0E198C !important; /* Green */
+  }
+
+  .drop-area{
+    width:100px;
+    height:25px;
+    border: 1px solid #999;
+    text-align: center;
+    padding:10px;
+    cursor:pointer;
+  }
+  #thumbnail img{
+    width:100px;
+    height:100px;
+    margin:5px;
+  }
+  canvas{
+    border:1px solid red;
+  }

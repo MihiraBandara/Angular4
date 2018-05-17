@@ -1,0 +1,109 @@
+md-toolbar{
+    background-color: indigo;
+}
+
+md-toolbar h2 {
+  color: white;
+   }
+
+.product-card {
+  width: 400px;
+}
+.product-card {
+  width: 400px;
+  height: 100%;
+}
+.open-card {
+  width: 400px;
+  height: 100%;
+  padding-left:20px;
+  text-align:right;
+  
+}
+
+.large-card{
+     width: 920px;
+    height: 100%;
+    margin-top: 45px;
+}
+
+.mat-card {
+    transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+    display: block;
+    position: relative;
+    padding:0px;
+    border-radius: 2px;
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+.mat-card-title, .mat-card-subtitle {
+    font-size: 22px;
+}
+
+.product-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+  min-width: 100px;
+}
+
+.product-table {
+  flex: 0 0 auto;
+}
+
+.product-header-row, .product-row {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  padding: 0 4px;
+}
+
+.product-cell, .product-header-cell {
+  flex: 0 0 142px;
+}
+
+.product-cell {
+  flex: 0 0 132px;
+}
+
+.product-header-cell {
+  font-size: 12px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.product-cell {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.87);
+  
+}
+.mat-card-subtitle{
+  font-size: 12px;
+  color:white;  
+}
+
+.study-name-column
+{
+    flex: 0 0 148px !important;
+}
+.product-type-column
+{
+    flex: 0 0 120px !important;
+}
+.date-recieved-column-header{
+  flex: 0 0 80px !important;
+}
+.create-product-button{
+  margin-top:10px;
+  margin-right:10px;
+  margin-left:0px;
+  float: right;
+  height: 64px;
+  width: 230px;
+  border-radius: 2px;
+  background-color: #EAEAEA;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 1px 3px 0 rgba(0,0,0,0.1);
+}

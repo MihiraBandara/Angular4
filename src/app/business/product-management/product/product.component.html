@@ -1,0 +1,59 @@
+<md-toolbar class="top-bar">
+        <h2 class="pro-main-title">Bread Shop</h2>
+      </md-toolbar>
+<div>
+    <div fxLayout="row wrap" layout-xs="column">
+        <div fxFlex="100%">
+            <md-card>
+                <md-card-header class="main-card-header card-header">
+                    <md-card-subtitle class="card-subtitle">Product Information</md-card-subtitle>
+                </md-card-header>
+                <form class="product-form" #productRequestForm="ngForm" (ngSubmit)=onSubmit(productRequestForm)>
+                    <br>
+                    <div flex>
+                        <div fxFlex="80%">
+                            <md-input-container class="product-full-width" flex>
+                                <input mdInput placeholder="product name" [(ngModel)]="product.productName" [disabled]="isInReviewState" type="text" #productName="ngModel"
+                                    name="productName" pattern="^[a-zA-Z0-9_ ]*$" required>
+                                <md-hint [hidden]="productName.pristine || productName.valid">
+                                    <span [hidden]="!productName.errors?.required">Please enter a name for your product.</span>
+                                    <span [hidden]="!productName.errors?.pattern">Please use alphaneumeric characters.</span>
+                                </md-hint>
+                            </md-input-container>
+                            <md-input-container class="product-full-width" flex>
+                                <input mdInput placeholder="Ingrediants" [(ngModel)]="product.ingrediants" [disabled]="isInReviewState" type="text" #ingrediants="ngModel"
+                                    name="ingrediants" pattern="^[a-zA-Z0-9_ ]*$" required>
+                                <md-hint [hidden]="ingrediants.pristine || ingrediants.valid">
+                                    <span [hidden]="!ingrediants.errors?.required">Please enter a name for your ingrediants.</span>
+                                    <span [hidden]="!ingrediants.errors?.pattern">Please use alphaneumeric characters.</span>
+                                </md-hint>
+                            </md-input-container>
+                            <md-input-container class="product-full-width" flex>
+                                <input mdInput placeholder="Descriptions" [(ngModel)]="product.descriptions" [disabled]="isInReviewState" type="text" #descriptions="ngModel"
+                                    name="descriptions" pattern="^[a-zA-Z0-9_ ]*$" required>
+                                <md-hint [hidden]="descriptions.pristine || descriptions.valid">
+                                    <span [hidden]="!descriptions.errors?.required">Please enter a name for your descriptions.</span>
+                                    <span [hidden]="!descriptions.errors?.pattern">Please use alphaneumeric characters.</span>
+                                </md-hint>
+                            </md-input-container>
+                            <md-input-container class="product-full-width" flex>
+                                <input mdInput placeholder="Quantity" [(ngModel)]="product.quantity" #quantity="ngModel" type="text"
+                                    name="quantity" type="text" pattern="^[a-zA-Z0-9_ ]*$" required>
+                                <md-hint [hidden]="quantity.pristine || quantity.valid">
+                                    <span [hidden]="!quantity.errors?.required">Please enter the quantity.</span>
+                                    <span [hidden]="!quantity.errors?.pattern">Please use alphaneumeric characters.</span>
+                                </md-hint>
+                            </md-input-container>
+                        </div>
+                    </div>
+                </form>
+            </md-card>
+            <div [hidden]="isInEditView">
+                <button  md-button class='create-product-button' (click)="saveProduct()" [disabled]="!productRequestForm.valid">Save product</button>
+            </div>
+            <div [hidden]="!isInEditView" >
+                <button  md-button class='create-product-button' (click)="saveProduct()" [disabled]="!productRequestForm.valid">Edit product</button>
+            </div>
+        </div>
+    </div>
+</div>

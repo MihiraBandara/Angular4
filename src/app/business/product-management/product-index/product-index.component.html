@@ -1,0 +1,64 @@
+<md-toolbar class="top-bar">
+    <h2 class="pro-main-title">Bread Shop</h2>
+  </md-toolbar>
+  
+  <md-grid-list cols='4' rowHeight='100px'>
+  
+    <md-grid-tile colspan='3' rowspan='10'>
+      <md-card class='large-card main-card'>
+        <md-card-header class="card-header">
+            <md-card-title class="pro-card-title"><label class='myproducts-card-header'>Product List</label></md-card-title>
+        </md-card-header>
+        <hr class="header-border"> 
+            <div class="product-container">
+              <div #insertionPoint></div>
+              <cdk-table #table [dataSource]="dataSource" class="product-table">
+  
+                <ng-container cdkColumnDef="productId">
+                  <cdk-header-cell *cdkHeaderCellDef class="product-header-cell title-color"> Id </cdk-header-cell>
+                  <cdk-cell *cdkCellDef="let row" class="product-cell"> {{row.productId}} </cdk-cell>
+                </ng-container>
+  
+                <ng-container cdkColumnDef="productName">
+                  <cdk-header-cell *cdkHeaderCellDef class="product-header-cell title-color"> Product Name </cdk-header-cell>
+                  <cdk-cell *cdkCellDef="let row" class="product-cell study-name-column"> {{row.productName}} </cdk-cell>
+                </ng-container>
+  
+                <ng-container cdkColumnDef="quantity">
+                  <cdk-header-cell *cdkHeaderCellDef class="product-header-cell product-type-column title-color">Quantity</cdk-header-cell>
+                  <cdk-cell *cdkCellDef="let row" class="product-cell product-type-column"> {{row.quantity}} </cdk-cell>
+                </ng-container>
+  
+                <ng-container cdkColumnDef="ingrediants">
+                  <cdk-header-cell *cdkHeaderCellDef class="product-header-cell title-color"> Ingrediants </cdk-header-cell>
+                  <cdk-cell *cdkCellDef="let row" class="product-cell"> {{row.ingrediants}} </cdk-cell>
+                </ng-container>
+
+                <ng-container cdkColumnDef="descriptions">
+                    <cdk-header-cell *cdkHeaderCellDef class="product-header-cell title-color"> Descriptions </cdk-header-cell>
+                    <cdk-cell *cdkCellDef="let row" class="product-cell"> {{row.descriptions}} </cdk-cell>
+                  </ng-container>
+
+                  <ng-container cdkColumnDef="label">
+                    <cdk-header-cell *cdkHeaderCellDef class="product-header-cell title-color">  
+
+                    </cdk-header-cell>
+                    <cdk-cell *cdkCellDef="let row" class="project-detail-cell study-name-column" 
+                    html-content="true">
+                      <div><a md-button class="approve-button" (click) ="initializeProductEdit(row.productId)"
+                        href='/business/product-management/product/edit/{{row.productId}}'>
+                        Edit</a></div></cdk-cell>
+              </ng-container>
+
+                <cdk-header-row *cdkHeaderRowDef="displayedColumns" class="product-header-row"></cdk-header-row>
+                <cdk-row *cdkRowDef="let row; columns: displayedColumns; let index=index" class="product-row" (click)="expandRow(index)"
+                  #cdkrow>
+                </cdk-row>
+              </cdk-table>
+
+              <button md-button class="create-product-button" (click) ="gotoCreateProduct()">Create New Product</button>
+            </div>
+
+      </md-card>
+    </md-grid-tile>
+  </md-grid-list>

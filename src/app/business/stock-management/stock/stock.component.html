@@ -1,0 +1,82 @@
+<md-toolbar class="top-bar">
+    <h2 class="pro-main-title">Bread Shop</h2>
+</md-toolbar>
+
+<div>
+    <div fxLayout="row wrap" layout-xs="column">
+        <div fxFlex="33.33%" class="stock-information">
+            <md-card class="'product-information-card">
+                <md-card-header class="main-card-header card-header">
+                    <md-card-subtitle class="card-subtitle">Stock Information</md-card-subtitle>
+                </md-card-header>
+                <form class="example-form" #stockRequestForm="ngForm">
+                    <div flex>
+                        <md-input-container class="example-left-width" flex>
+                            <input mdInput placeholder="Total Quantity" [(ngModel)]="stock.totalQuantity" #totalQuantity="ngModel" name="totalQuantity"
+                                type="text" pattern="^[a-zA-Z0-9_ ]*$" required>
+                            <md-hint [hidden]="totalQuantity.pristine || totalQuantity.valid">
+                                <span [hidden]="!totalQuantity.errors?.required">Please enter the total number of slides.</span>
+                                <span [hidden]="!totalQuantity.errors?.pattern">Please use alphaneumeric characters.</span>
+                            </md-hint>
+                        </md-input-container>
+                        <md-input-container class="example-left-width" flex>
+                            <input mdInput placeholder="Total Price" [(ngModel)]="stock.totalPrice" #totalPrice="ngModel" name="totalPrice" type="text"
+                                pattern="^[a-zA-Z0-9_ ]*$" required>
+                            <md-hint [hidden]="totalPrice.pristine || totalPrice.valid">
+                                <span [hidden]="!totalPrice.errors?.required">Please enter the total number of slides.</span>
+                                <span [hidden]="!totalPrice.errors?.pattern">Please use alphaneumeric characters.</span>
+                            </md-hint>
+                        </md-input-container>
+                        <div class="evaluation-buttons">
+                            <button md-button class="create-product-button" (click)="saveStock()">Save</button>
+                        </div>
+
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                </form>
+                <br>
+                <br>
+            </md-card>
+        </div>
+        <div fxFlex="33.33%" style="width:500px;float:right; margin-top:-350px">
+            <div layout="column">
+                <div *ngFor="let productItem of productList" class="add-stock-type-card">
+                    <md-card class='stock-type-edit-box'>
+                        <table>
+                            <tr>
+                                <td>
+                                    <md-input-container class='label-stock-type stock-priority-box'>
+                                        <input mdInput [(ngModel)]="productItem.productName" #stock="ngModel" placeholder="Product Name" name="productName">
+                                    </md-input-container>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <md-input-container class="submenu-1">
+                                        <input mdInput [ngModel]="updatedQuantity" name="updatedQuantity" pattern="(\d{3,}|[2-9][0-9])" placeholder="Quantity" required
+                                            type="number" #updatedQuantity="ngModel" name="updatedQuantity">
+                                        <md-hint [hidden]="updatedQuantity.pristine || updatedQuantity.valid" class="alert alert-danger">
+                                            <span [hidden]="!updatedQuantity.errors?.required">Please enter the number of products.</span>
+                                            <span [hidden]="!updatedQuantity.errors?.pattern">Number of slides should be greater than 20.</span>
+                                        </md-hint>
+                                    </md-input-container>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class='additional-button-add' md-raised-button (click)="editProducts(productItem , updatedQuantity)">Add</button>
+                                </td>
+                                <td>
+                                    <button class='additional-button-cancel' md-raised-button>Cancel</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </md-card>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
